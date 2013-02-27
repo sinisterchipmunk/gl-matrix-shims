@@ -1,0 +1,18 @@
+{
+  "name": "gl-matrix-shims",
+  "description": "Shims to ease the gl-matrix upgrade process from 1.x to 2.x",
+  "version": "0.0.1",
+  "main": "lib/gl-matrix-shims.js",
+  "bugs": {
+    "url": "https://github.com/sinisterchipmunk/gl-matrix-shims/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sinisterchipmunk/gl-matrix-shims.git"
+  },
+  "devDependencies": {
+    "jasmine-node": "1.2.2",
+    "jst": "0.0.2"
+  },
+  "license": "MIT"
+}
