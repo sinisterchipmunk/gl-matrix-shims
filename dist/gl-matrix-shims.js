@@ -1,5 +1,5 @@
 (function(global) {
-  function require(fn) { require.modules[fn](); }
+  function require(fn) { return require.modules[fn](); }
 
   require.modules = {};
 
@@ -1185,4 +1185,6 @@
       return module.exports;
     };
   
+
+  require("gl-matrix-shims");
 })(this);
