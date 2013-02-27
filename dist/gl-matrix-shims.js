@@ -1,6 +1,8 @@
 (function(global) {
   function require(fn) { require.modules[fn](); }
 
+  require.modules = {};
+
   require.modules['gl-matrix'] = (function() {
     if (!global.glMatrix) {
       throw new Error("gl-matrix has not been loaded yet! "+
@@ -859,7 +861,10 @@
     if (!GLMatrix.noisy) {
       return;
     }
-    return console.log("Warning: SHIMMED call to GLMatrix v1.x:", "" + type + "." + name);
+    console.log("Warning: SHIMMED call to GLMatrix v1.x:", "" + type + "." + name);
+    if (GLMatrix.stack) {
+      return console.log(new Error().stack);
+    }
   };
 
 }).call(this);

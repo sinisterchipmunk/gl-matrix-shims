@@ -1,6 +1,8 @@
 (function(global) {
   function require(fn) { require.modules[fn](); }
 
+  require.modules = {};
+
   require.modules['gl-matrix'] = (function() {
     if (!global.glMatrix) {
       throw new Error("gl-matrix has not been loaded yet! "+
