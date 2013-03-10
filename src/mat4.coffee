@@ -40,7 +40,7 @@ module.exports =
     shim 'mat4', 'frustum', out, left, right, bottom, top, near, far
 
   perspective:  (fovy, aspect, near, far, dest = mat4.create()) ->
-    shim 'mat4', 'perspective', dest, fovy, aspect, near, far
+    shim 'mat4', 'perspective', dest, fovy * Math.PI / 180, aspect, near, far
 
   ortho:      (left, right, bottom, top, near, far, out = mat4.create()) ->
     shim 'mat4', 'ortho', out, left, right, bottom, top, near, far

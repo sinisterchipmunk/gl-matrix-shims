@@ -155,6 +155,16 @@ describe("mat4", function() {
                           [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17])).toBeFalsy();
       });
     });
+
+    describe("with nonzero near, 45deg fovy, and realistic aspect ratio", function() {
+      beforeEach(function() { result = mat4.perspective(45, 640/480, 0.1, 200, mat4.create()); });
+      it("should calculate correct matrix", function() { expect(result).toBeEqualish([
+          1.81066, 0, 0, 0,
+          0, 2.414213, 0, 0,
+          0, 0, -1.001, -1,
+          0, 0, -0.2001, 0
+      ]); });
+    });
   });
 
   beforeEach(function() {
